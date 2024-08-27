@@ -10,7 +10,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     const getNewsData = async () => {
-      const url = '/everything?q=tesla&from=2024-07-27&sortBy=publishedAt&apiKey=' + process.env.REACT_APP_API_KEY
+      const url = '/everything?q=tesla&from=2024-07-27&sortBy=publishedAt&apiKey=' + process.env.REACT_APP_API_KEY + '&page=' + 1 + '&pageSize=' + 20
       const apiResponse = await get(url);
       setNewsData(apiResponse);
     }
@@ -18,8 +18,10 @@ const Home: React.FC = () => {
   }, [])
 
   return (
-    <div>
+    <div className='container'>
       <div>Filter</div>
+      <div className='total'><span>Total:</span> {newsData?.totalResults}</div>
+
       <div className='card-container'>
         {
           newsData?.articles && newsData?.articles.length > 0 &&
