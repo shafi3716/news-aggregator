@@ -1,0 +1,32 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 40px 40px;
+}
+
+.card {
+    width: 400px;
+    flex-basis: calc(33.333% - 10px);
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.card-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.card-title {
+    padding: 10px 0;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.pub-author {
+    padding: 20px 0 0;
+    .title {
+        font-weight: 600;
+    }
+}
