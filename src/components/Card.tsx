@@ -10,12 +10,15 @@ const Card: React.FC<ArticleDetail> = ({article}) => {
   return (
         <>
             <div>
-                <img src={article?.urlToImage} alt={article?.title} className='card-img'/>
+                {
+                    <img src={article?.urlToImage} alt={article?.title} className='card-img'  
+                    onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => { e.currentTarget.src  = "/images/default-image.png"; }}/>
+                }
             </div>
             <div className='card-title'>
                 {article?.title}
             </div>
-            <div>
+            <div className='card-desc'>
                 {article?.description }
             </div>
             <div className='pub-author'>

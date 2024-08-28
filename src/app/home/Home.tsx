@@ -8,11 +8,11 @@ import './home.scss';
 const Home: React.FC = () => {
 
   const [newsData , setNewsData] = useState<ArticlesProps>();
-  const [filterOpen, setFilterOpen] = useState<boolean>(false);
+  const [filterOpen, setFilterOpen] = useState<boolean>(true);
 
   useEffect(() => {
     const getNewsData = async () => {
-      const url = '/everything?q=tesla&from=2024-07-27&sortBy=publishedAt&apiKey=' + process.env.REACT_APP_API_KEY + '&page=' + 1 + '&pageSize=' + 20
+      const url = '/everything?q=tesla&sortBy=publishedAt&apiKey=' + process.env.REACT_APP_API_KEY + '&page=' + 1 + '&pageSize=' + 20
       const apiResponse = await get(url);
       setNewsData(apiResponse);
     }
@@ -27,7 +27,7 @@ const Home: React.FC = () => {
           <span>Total:</span> {newsData?.totalResults}
         </div>
         <div>
-          <button className='filter-btn' onClick={() => setFilterOpen(!filterOpen)} >Filter</button>
+          <button className='filter-btn' onClick={() => setFilterOpen(!filterOpen)}>Filter</button>
         </div>
       </div>
       {/* News filter functionality */}
