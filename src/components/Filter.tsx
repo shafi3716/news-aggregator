@@ -34,8 +34,8 @@ const Filter: React.FC<filterProps> = ({isShow}) => {
             <div className='input'>
                 <label>End Date</label>
                 <input className="field" name="endDate" type='date'/>
-            </div> 
-            <div className='input'>
+            </div>  
+            <div className='btn-group'>
                 <button className='button success'>Apply</button>
                 <button className='button warm'>Clear</button>
             </div>

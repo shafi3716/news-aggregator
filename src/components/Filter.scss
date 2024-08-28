@@ -1,12 +1,11 @@
 .filter-section {
-    padding: 30px 0;
     display: grid;
     grid-template-columns: repeat(3, 32.5%);
     gap: 20px;
     background: #80808029;
     padding: 20px;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     @media (max-width: 992px) {
         grid-template-columns: repeat(2, 49.2%);
     } 
@@ -15,27 +14,30 @@
     }
     .input {
         display: grid;
-        // grid-auto-columns: 1fr;
+        grid-template-columns: repeat(1, 99.2%);
         gap: 10px;
     }
     .field {
-        padding: 15px 15px;
+        padding: 13px 13px;
         border: 1px solid #607D8B;
         border-radius: 5px;
         font-size: 16px;
     }
+    .btn-group {
+        display: flex;
+        justify-content: space-around;
+        align-items: end;
+    }
     .button {
-        padding: 1rem;
+        padding: 17px 25px;
         color: white;
         border: unset;
         border-radius: 10px;
         cursor: pointer;
     }
-
     .warm {
         background-color: #ff9800;
     }
-
     .success {
         background-color: #4caf50;
     }
