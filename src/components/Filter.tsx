@@ -13,27 +13,31 @@ const Filter: React.FC<filterProps> = ({isShow}) => {
         <div className='filter-section'>
             <div className='input'>
                 <label>News Title</label>
-                <input name="news-title" />
+                <input className="field" name="news-title" type='text'/>
             </div>
             <div className='input'>
                 <label>Source</label>
-                <input name="source" />
+                <input className="field" name="source" type='text'/>
             </div> 
             <div className='input'>
                 <label>Category</label>
-                <input name="category" />
+                <select className="field" name="category">
+                    <option>One</option>
+                    <option>two</option>
+                    <option>three</option>
+                </select>
             </div>  
             <div className='input'>
                 <label>Start Date</label>
-                <input name="startDate" />
+                <input className="field" name="startDate" type='date'/>
             </div>
             <div className='input'>
                 <label>End Date</label>
-                <input name="endDate" />
+                <input className="field" name="endDate" type='date'/>
             </div> 
             <div className='input'>
-                <button>Apply</button>
-                <button>Clear</button>
+                <button className='button success'>Apply</button>
+                <button className='button warm'>Clear</button>
             </div>
         </div>
     }

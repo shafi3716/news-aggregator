@@ -11,7 +11,7 @@ const Card: React.FC<ArticleDetail> = ({article}) => {
         <>
             <div>
                 {
-                    <img src={article?.urlToImage} alt={article?.title} className='card-img'  
+                    <img src={article?.urlToImage ?? "/images/default-image.png"} alt={article?.title} className='card-img'  
                     onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => { e.currentTarget.src  = "/images/default-image.png"; }}/>
                 }
             </div>

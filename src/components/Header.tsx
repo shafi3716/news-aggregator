@@ -8,10 +8,10 @@ const Header: React.FC = () => {
         <h2 className='logo'>Daily News</h2>
       </div>
       <div className='menu'>
-        <div>
+        <div className='m-item'>
           <span>HOME</span>
         </div>
-        <div>
+        <div className='m-item'>
           <span>MY NEWS</span>
         </div>
       </div>
