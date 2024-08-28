@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Card from '../../components/Card';
+import Filter from '../../components/Filter';
 import { get } from '../../services/apiService';
 import { ArticlesProps } from '../../type/Type';
 import './home.scss';
@@ -7,6 +8,7 @@ import './home.scss';
 const Home: React.FC = () => {
 
   const [newsData , setNewsData] = useState<ArticlesProps>();
+  const [filterOpen, setFilterOpen] = useState<boolean>(false);
 
   useEffect(() => {
     const getNewsData = async () => {
@@ -19,9 +21,18 @@ const Home: React.FC = () => {
 
   return (
     <div className='container'>
-      <div>Filter</div>
-      <div className='total'><span>Total:</span> {newsData?.totalResults}</div>
-
+      {/* result count and filter button */}
+      <div className='result-filter'>
+        <div className='total-result'>
+          <span>Total:</span> {newsData?.totalResults}
+        </div>
+        <div>
+          <button className='filter-btn' onClick={() => setFilterOpen(!filterOpen)} >Filter</button>
+        </div>
+      </div>
+      {/* News filter functionality */}
+      <Filter isShow={filterOpen}/>
+      {/* News cards */}
       <div className='card-container'>
         {
           newsData?.articles && newsData?.articles.length > 0 &&

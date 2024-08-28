@@ -1,0 +1,19 @@
+.header {
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    gap: 15rem;
+}
+
+.logo {
+    font-size: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-transform: uppercase;
+    color: #607d8b;
+}
+
+.menu {
+    display: flex;
+    gap: 2rem;
+    cursor: pointer;
+}

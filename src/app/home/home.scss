@@ -1,5 +1,5 @@
 .container {
-    padding: 40px 40px;
+    padding: 0 40px;
 }
 
 .card-container {
@@ -29,12 +29,29 @@
 
 .pub-author {
     padding: 20px 0 0;
-    .title {
+    color: rgb(84, 86, 88);
+    font-size: 14px;
+    .c-h-1 {
         font-weight: 600;
     }
 }
 
-.total {
-    padding: 0 0 10px;
+.result-filter {
+    padding: 0 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-result {
     font-weight: bold;
+}
+
+.filter-btn {
+    background: #607D8B;
+    color: white;
+    padding: 6px 11px;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
 }

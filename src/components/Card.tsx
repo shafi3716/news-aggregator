@@ -19,8 +19,8 @@ const Card: React.FC<ArticleDetail> = ({article}) => {
                 {article?.description }
             </div>
             <div className='pub-author'>
-                <div><span className='title'>Published: </span> {HelperUtils.countdown(article?.publishedAt)}</div>
-                <div><span className='title'>Author: </span> {article?.author ?? "-"}</div>
+                <div><span className='c-h-1'>Published: </span> {HelperUtils.countdown(article?.publishedAt)}</div>
+                <div><span className='c-h-1'>Author: </span> {article?.author ?? "-"}</div>
             </div>
         </>
   )
