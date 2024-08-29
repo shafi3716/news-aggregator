@@ -1,20 +1,26 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import Card from '../../components/Card';
 import Filter from '../../components/Filter';
 import { get } from '../../services/apiService';
-import { ArticlesProps } from '../../type/Type';
+import { saveArticles } from '../../store/newsDataSlice';
+import { RootState } from '../../store/store';
 import './home.scss';
 
 const Home: React.FC = () => {
+  const navigate = useNavigate();
 
-  const [newsData , setNewsData] = useState<ArticlesProps>();
+  const dispatch = useDispatch();
+  const newsData = useSelector((state: RootState) => state.newsDataSlice);
   const [filterOpen, setFilterOpen] = useState<boolean>(true);
 
   useEffect(() => {
     const getNewsData = async () => {
-      const url = '/everything?q=tesla&sortBy=publishedAt&apiKey=' + process.env.REACT_APP_API_KEY + '&page=' + 1 + '&pageSize=' + 20
+      const url = `/everything?q=${newsData.search.q}&sortBy=${newsData.search.sortBy}&apiKey=${process.env.REACT_APP_API_KEY}&page=${newsData.search.page}&pageSize=${newsData.search.pageSize}`
       const apiResponse = await get(url);
-      setNewsData(apiResponse);
+      dispatch(saveArticles(apiResponse));
     }
     getNewsData();
   }, [])

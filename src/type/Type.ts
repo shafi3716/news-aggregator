@@ -17,3 +17,10 @@ export interface ArticlesProps {
     status: string,
     totalResults: number
 }
+
+export interface search{
+    q: string,
+    sortBy: string,
+    page: number,
+    pageSize: number,
+  }

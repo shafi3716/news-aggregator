@@ -1,3 +1,4 @@
+import parse from 'html-react-parser';
 import React from 'react';
 import { HelperUtils } from '../helpers/HelperUtil';
 import { ArticleProps } from '../type/Type';
@@ -16,10 +17,10 @@ const Card: React.FC<ArticleDetail> = ({article}) => {
                 }
             </div>
             <div className='card-title'>
-                {article?.title}
+                {parse(article?.title)}
             </div>
             <div className='card-desc'>
-                {article?.description }
+                {parse(article?.description) }
             </div>
             <div className='pub-author'>
                 <div><span className='c-h-1'>Published: </span> {HelperUtils.countdown(article?.publishedAt)}</div>
