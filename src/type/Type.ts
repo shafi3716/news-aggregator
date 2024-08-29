@@ -18,9 +18,12 @@ export interface ArticlesProps {
     totalResults: number
 }
 
-export interface search{
+export interface Search{
     q: string,
+    domains: string,
     sortBy: string,
+    form: string,
+    to: string,
     page: number,
     pageSize: number,
   }

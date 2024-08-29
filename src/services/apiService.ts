@@ -17,6 +17,5 @@ export const get = async (route: string): Promise<any> => {
     return response?.data;
   } catch (error) {
     console.error('API error:', error);
-    throw error;
   }
 };
