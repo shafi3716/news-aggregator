@@ -27,13 +27,16 @@ export const newsDataSlice = createSlice({
     reducers: {
         saveArticles: (state, action: PayloadAction<ArticlesProps>) => {
             state.totalResults = action.payload.totalResults;
-            state.articles = action.payload.articles; 
+            state.articles = [...state.articles, ...action.payload.articles]; 
         },
         updateSearchField: (state, action: PayloadAction<Search>) => {
           state.search = action.payload
+        },
+        loadMoreItem: (state) => {
+          state.search.page = state.search.page + 1
         }
     }
 })
 
-export const { saveArticles, updateSearchField } = newsDataSlice.actions
+export const { saveArticles, updateSearchField, loadMoreItem } = newsDataSlice.actions
 export default newsDataSlice.reducer

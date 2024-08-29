@@ -75,3 +75,28 @@
     border: none;
     cursor: pointer;
 }
+
+.load-more-section {
+    display: flex;
+    justify-content: center;
+    padding: 100px;
+}
+
+.load-more-btn {
+    color: #ffff;
+    background: #4CAF50;
+    padding: 20px 55px;
+    border: unset;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.load-more-btn:hover {
+    background-color: #3b953e;
+}
+
+.load-more-btn:disabled {
+    color: #a9a9a9;
+    background-color: #d6d6d6;
+}
