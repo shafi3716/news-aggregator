@@ -7,14 +7,14 @@ const Header: React.FC = () => {
       <div>
         <h2 className='logo'>Daily News</h2>
       </div>
-      <div className='menu'>
+      {/* <div className='menu'>
         <div className='m-item'>
           <span>HOME</span>
         </div>
         <div className='m-item'>
           <span>MY NEWS</span>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
